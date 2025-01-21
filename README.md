@@ -1,19 +1,19 @@
-# SQS Listener in Python using FastAPI
+# Listener SQS em Python usando FastAPI
 
-This project demonstrates how to create a background task in FastAPI to listen to AWS SQS messages.
+Este projeto demonstra como criar uma tarefa em segundo plano no FastAPI para escutar mensagens do AWS SQS.
 
-## Project Structure
+## Estrutura do Projeto
 
-- `background_tasks.py`: Defines the `BackgroudTask` class that runs a background task at specified intervals.
-- `server.py`: Sets up the FastAPI server and integrates the background task.
-- `app.py`: Entry point to run the FastAPI application using Uvicorn.
-- `listen_sqs.py`: Contains the function to listen to AWS SQS messages.
+- `background_tasks.py`: Define a classe `BackgroudTask` que executa uma tarefa em segundo plano em intervalos especificados.
+- `server.py`: Configura o servidor FastAPI e integra a tarefa em segundo plano.
+- `app.py`: Ponto de entrada para executar a aplicação FastAPI usando Uvicorn.
+- `listen_sqs.py`: Contém a função para escutar mensagens do AWS SQS.
 
-## Files
+## Arquivos
 
 ### `background_tasks.py`
 
-This file contains the `BackgroudTask` class which inherits from `threading.Thread`. It validates the task name, interval, and function, and runs the task at the specified interval.
+Este arquivo contém a classe `BackgroudTask` que herda de `threading.Thread`. Ela valida o nome da tarefa, intervalo e função, e executa a tarefa no intervalo especificado.
 
 ```python
 import threading
@@ -64,7 +64,7 @@ class BackgroudTask(threading.Thread):
 
 ### `server.py`
 
-This file sets up the FastAPI server and integrates the background task using an async context manager.
+Este arquivo configura o servidor FastAPI e integra a tarefa em segundo plano usando um gerenciador de contexto assíncrono.
 
 ```python
 import logging
@@ -92,7 +92,7 @@ async def read_root():
 
 ### `app.py`
 
-This is the entry point to run the FastAPI application using Uvicorn.
+Este é o ponto de entrada para executar a aplicação FastAPI usando Uvicorn.
 
 ```python
 import uvicorn as uvicorn
@@ -104,7 +104,7 @@ if __name__ == "__main__":
 
 ### `listen_sqs.py`
 
-This file contains the `listen_sqs` function which listens to AWS SQS messages and processes them.
+Este arquivo contém a função `listen_sqs` que escuta mensagens do AWS SQS e as processa.
 
 ```python
 import json
@@ -142,12 +142,12 @@ def listen_sqs():
         logger.error("Error in listening to SQS - %s", e)
 ```
 
-## Running the Application
+## Executando a Aplicação
 
-1. Set up your AWS credentials and environment variables for `AWS_REGION` and `SQS_QUEUE_URL`.
-2. Run the application using the following command:
+1. Configure suas credenciais AWS e variáveis de ambiente para `AWS_REGION` e `SQS_QUEUE_URL`.
+2. Execute a aplicação usando o seguinte comando:
    ```bash
    python app.py
    ```
 
-This will start the FastAPI server and the background task to listen to SQS messages.
+Isso iniciará o servidor FastAPI e a tarefa em segundo plano para escutar mensagens do SQS.
