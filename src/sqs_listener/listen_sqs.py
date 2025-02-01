@@ -2,17 +2,18 @@ import json
 import boto3
 import os
 import logging
+from dotenv import load_dotenv
 
-
+load_dotenv()
 logger = logging.getLogger(__name__)
 
 
 def listen_sqs():
     try:
-        sqs = boto3.client('sqs', region_name=os.environ['AWS_REGION'])
-        logger.info("Listening to SQS - %s", os.environ['SQS_QUEUE_URL'])
+        sqs = boto3.client('sqs', region_name=os.getenv['REGION_SQS'])
+        logger.info("Listening to SQS - %s", os.getenv['QUEUE_URL'])
         response = sqs.receive_message(
-            QueueUrl=os.environ['SQS_QUEUE_URL'],
+            QueueUrl=os.getenv['QUEUE_URL'],
             AttributeNames=['All'],
             MaxNumberOfMessages=1,
             WaitTimeSeconds=20
@@ -27,7 +28,7 @@ def listen_sqs():
                 
 
                 sqs.delete_message(
-                    QueueUrl=os.environ['SQS_QUEUE_URL'],
+                    QueueUrl=os.getenv['QUEUE_URL'],
                     ReceiptHandle=message_receipt_handle
                 )
         else:
