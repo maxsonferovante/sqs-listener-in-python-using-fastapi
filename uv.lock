@@ -455,6 +455,7 @@ dependencies = [
     { name = "boto" },
     { name = "boto3" },
     { name = "fastapi", extra = ["standard"] },
+    { name = "python-dotenv" },
     { name = "uvicorn" },
 ]
 
@@ -463,6 +464,7 @@ requires-dist = [
     { name = "boto", specifier = ">=2.49.0" },
     { name = "boto3", specifier = ">=1.36.2" },
     { name = "fastapi", extras = ["standard"], specifier = ">=0.115.6" },
+    { name = "python-dotenv", specifier = ">=1.0.1" },
     { name = "uvicorn", specifier = ">=0.34.0" },
 ]
 
