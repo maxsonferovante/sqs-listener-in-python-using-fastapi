@@ -3,6 +3,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from src.background_tasks.background_tasks import BackgroudTask
 from src.sqs_listener.listen_sqs import listen_sqs
+import asyncio
 
 
 logger = logging.getLogger(__name__)
@@ -23,3 +24,9 @@ app = FastAPI(lifespan=lifespan)
 async def read_root():
     return {"Hello": "World"}
 
+
+
+@app.on_event("startup")
+async def startup_event():
+    loop = asyncio.get_event_loop()
+    loop.create_task(listen_sqs(app))
