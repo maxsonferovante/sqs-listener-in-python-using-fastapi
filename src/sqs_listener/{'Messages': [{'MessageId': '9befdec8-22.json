@@ -1,0 +1,28 @@
+{
+  "Messages": [
+    {
+      "MessageId": "9befdec8-2289-4561-bc95-7542171b6662",
+      "ReceiptHandle": "AQEB4SoX/wtvyI8Snlj7VEhclFps9yHK7mua5+vrfTI8XKzF9nkSZfHAsArYe1EQWl3MFaAzA5YSxshLdlCuGh4jX9ShJl5Akp5NlM1b3LgXCOt2DGQY+aqBNnufg+vwdQVsY0/sOB4x5nxSAelSUtM9xJmT7bGP52olb0YbdYnrMrVx2SmfgOD9c84hzFMI+weEnMUzEMYNHf7dQGjEgON89c0KUeiyJDVw+RSmojFLGL5yUgvC9qZPwqXHnBq/j2g0Yp+If0fVK259yNFiMZSBmAqQ305mmp7tPzxc3pHPadlf8j4JVZfSYf0xn56nez7MC35blvF8e7L9amyLTttNCHTbvHM+w4i8ZAY3U7xTuLJXHQ8BTUwlJRCgLdgkTmmT",
+      "MD5OfBody": "a899e30986f20937f99775969771aa47",
+      "Body": "{\"recognition_id\": \"679ff8dfc96fad021724501a\", \"file_name\": \"profile_(3).pdf\", \"extension\": \"pdf\", \"path_file\": \"https://TempLinkShare.s3.us-east-005.backblazeb2.com/tempLinkShape/679ff8dfc96fad021724501a/profile_(3).pdf\"}",
+      "Attributes": {
+        "SenderId": "334318883918",
+        "ApproximateFirstReceiveTimestamp": "1738537185780",
+        "ApproximateReceiveCount": "1",
+        "SentTimestamp": "1738537184569"
+      }
+    }
+  ],
+  "ResponseMetadata": {
+    "RequestId": "507ab117-8a92-575f-a0f2-d10e71b35df4",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "x-amzn-requestid": "507ab117-8a92-575f-a0f2-d10e71b35df4",
+      "date": "Sun, 02 Feb 2025 22:59:45 GMT",
+      "content-type": "application/x-amz-json-1.0",
+      "content-length": "923",
+      "connection": "keep-alive"
+    },
+    "RetryAttempts": 0
+  }
+}
